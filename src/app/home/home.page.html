@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Northern Nevada Events
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,7 +14,20 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <strong>Explore the Sierra — Get out and about!</strong>
+    <p>Local events gathered from around the web.</p>
+  </div>
+  <div id="events">
+    <ion-card *ngFor="let event of events">
+      <ion-card-header>
+        <ion-card-title>{{event.pageTitle}}</ion-card-title>
+        <ion-card-subtitle>{{event.date}}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p>{{event.teaser}}</p><br>
+        <ion-button fill="outline" href="{{event.url}}" target="_blank" slot="end">View</ion-button>
+      </ion-card-content>
+    </ion-card>
   </div>
 </ion-content>
